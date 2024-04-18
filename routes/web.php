@@ -23,3 +23,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/product', App\Http\Controllers\ProductController::class);
 Route::get('/profile', [App\Http\Controllers\UserController::class, 'edit'])->name('profiles.edit');
 Route::put('/profile', [App\Http\Controllers\UserController::class, 'update'])->name('profiles.update');
+Route::get('/genpwd', [App\Http\Controllers\UserController::class, 'genpwd'])->name('profiles.genpwd');

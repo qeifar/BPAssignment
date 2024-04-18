@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 //use \Exception;
+use App\Helpers\PwdHelper;
 
 class UserController extends Controller
 {
@@ -56,5 +57,13 @@ class UserController extends Controller
         }catch (Exception $e) {
             return redirect()->route('profiles.edit')->with('error', 'Profile failed to update');
         }
+    }
+
+
+
+    public function genpwd(Request $request)
+    {
+        $password = PwdHelper::generatePassword(true, true, true, true, 12);
+        echo "Generated Password: " . $password;
     }
 }
