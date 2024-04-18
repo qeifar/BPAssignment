@@ -24,5 +24,5 @@ Route::resource('/product', App\Http\Controllers\ProductController::class);
 Route::get('/profile', [App\Http\Controllers\UserController::class, 'edit'])->name('profiles.edit');
 Route::put('/profile', [App\Http\Controllers\UserController::class, 'update'])->name('profiles.update');
 Route::get('/genpwd', [App\Http\Controllers\UserController::class, 'genpwd'])->name('profiles.genpwd');
-
-Route::get('/order', 'App\Http\Controllers\PizzaOrderController@calculateBill');
+Route::get('/pizza', [App\Http\Controllers\PizzaOrderController::class, 'index'])->name('pizza.index');
+Route::get('/pizza/order', 'App\Http\Controllers\PizzaOrderController@calculateBill');

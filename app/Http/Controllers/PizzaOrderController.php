@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class PizzaOrderController extends Controller
 {
+    public function index(){
+
+        return view('pizza.index');
+    }
     public function calculateBill(Request $request)
     {
         // Get user's order from request
